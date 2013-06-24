@@ -19,12 +19,15 @@
  */
 package controllers;
 
+import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
 import lib.APIException;
 import lib.Api;
 import models.ESClusterHealth;
 import models.SystemJob;
 import models.SystemMessage;
-import play.mvc.*;
+import play.mvc.Result;
+import security.Roles;
 
 import java.io.IOException;
 import java.util.List;
@@ -34,7 +37,8 @@ import java.util.List;
  */
 public class SystemController extends AuthenticatedController {
 
-    public static Result index() {
+	@Restrict(@Group({Roles.ADMIN}))
+	public static Result index() {
         try {
             List<SystemJob> systemJobs = SystemJob.all();
             List<SystemMessage> systemMessages = SystemMessage.all();

@@ -13,6 +13,7 @@ object ApplicationBuild extends Build {
     javaJdbc,
     javaEbean,
 
+	  "be.objectify" %% "deadbolt-java" % "2.1-RC2",
     "com.google.code.gson" % "gson" % "2.2",
     "com.ning" % "async-http-client" % "1.7.17",
 

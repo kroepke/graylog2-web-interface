@@ -5,11 +5,8 @@ import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.AsyncHttpClientConfig;
 import com.ning.http.client.Response;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -52,7 +49,7 @@ public class Api {
 		} catch (MalformedURLException e) {
 			throw new RuntimeException("Malformed URL.", e);
 		}
-		return (T) null;
+		return null;
 	}
 
 	public static <T> T get(String target, Class<T> responseClass) throws IOException, APIException {

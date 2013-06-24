@@ -17,19 +17,17 @@
  * along with Graylog2.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package lib;
+package security;
 
 /**
  * @author Lennart Koopmann <lennart@torch.sh>
  */
 public class Authenticator {
 
-    public boolean authenticate(String username, String password) {
-        if (username.equals("lennart") && password.equals("123123123")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+	public boolean authenticate(String username, String password) {
+		if (username.equals("admin")) if (password.equals("123123123")) return true;
+		if (username.equals("lennart")) if (password.equals("123123123")) return true;
+		return false;
+	}
 
 }

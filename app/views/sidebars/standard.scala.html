@@ -1,6 +1,6 @@
 @(currentUser: User)
 
-<h2>Welcome, @currentUser.getFullName()</h2>
+<h2>Welcome, @currentUser.getFullName() (@for(role <- currentUser.getRoles()) { @role.getName() <nbsp/> })</h2>
 Your current time: @{new Date()}
 
 <div id="sidebar-graph"></div>
