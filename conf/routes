@@ -262,6 +262,8 @@ POST        /a/system/grokpatterns/create                                       
 DELETE      /a/system/grokpatterns/:pattern_id                                       @controllers.api.GrokPatternsApiController.delete(pattern_id: String)
 
 GET         /robots.txt                                                              controllers.Assets.at(path="/public", file="robots.txt")
+# Map tiles for offline usage
+GET         /map/tiles/:zoom/:x/:y                                                   @controllers.MapTileController.tile(zoom: Integer, x: Integer, y: Integer)
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                                                            controllers.Assets.at(path="/public", file)

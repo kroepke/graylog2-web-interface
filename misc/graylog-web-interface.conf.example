@@ -25,5 +25,9 @@ field_list_limit=100
 # Use this to run Graylog with a path prefix
 #application.context=/graylog2
 
+# To serve map tiles adapt the following path to a TileMill generated .mbtiles file.
+#db.default.driver=org.sqlite.JDBC
+#db.default.url="jdbc:sqlite:/tmp/graylog.mbtiles"
+
 # You usually do not want to change this.
 application.global=lib.Global

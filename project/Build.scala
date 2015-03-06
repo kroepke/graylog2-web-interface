@@ -16,6 +16,7 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     cache,
     javaCore,
+    javaJdbc,
     "com.google.guava" % "guava" % "18.0",
     "com.ning" % "async-http-client" % "1.8.14",
     "org.apache.shiro" % "shiro-core" % "1.2.2",
@@ -24,6 +25,8 @@ object ApplicationBuild extends Build {
     "javax.inject" % "javax.inject" % "1",
     "org.graylog2" % "play2-graylog2_2.10" % "1.2.1",
     "org.graylog2" % "graylog2-rest-client" % appVersion,
+
+    "org.xerial" % "sqlite-jdbc" % "3.8.7",
 
     // TODO this is stupid, just to get that UriBuilder...
     "javax.ws.rs" % "jsr311-api" % "1.1.1",
